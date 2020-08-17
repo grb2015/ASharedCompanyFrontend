@@ -10,7 +10,7 @@ import {Title} from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   emailForm: FormGroup;
-
+  private listInfos;
   constructor(private formbuilder: FormBuilder,private title: Title)
   {
     title.setTitle('Home');
@@ -22,25 +22,15 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.listInfos=[
+      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
+      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
+      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
+      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
+      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
+    ]
   }
 
-  subscribeNewsletter(event,formData)
-  {
-    event.preventDefault();
-    console.log(formData);
-    let controls = formData.controls;
-    let email =   controls.email.value;
 
-    if(!formData.valid)
-    {
-      controls.email._touched = true;
-      return false;
-    }
-    else
-    {
-      alert('Thank you for your subscription.');
-    }
-
-  }
 
 }

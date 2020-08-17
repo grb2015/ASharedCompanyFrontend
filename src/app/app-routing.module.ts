@@ -22,7 +22,7 @@ const routes: Routes = [
   // { path: 'services', component: ServicesComponent },
   // { path: 'portfolio', component: PortfolioComponent },
   // { path: 'pricing', component: PricingComponent },
-  // { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   // { path: 'login', component: Login},
   // { path: 'personsetting', component: personsettingComponent,canActivate: [authenticatedService] }
   
