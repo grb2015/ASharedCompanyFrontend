@@ -15,16 +15,16 @@ import { authenticatedService } from './shareService/authenticatedService';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'header', component: HeaderComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'pricing', component: PricingComponent },
-  { path: 'home', component: HomeComponent},
-  { path: 'login', component: Login},
-  { path: 'personsetting', component: personsettingComponent,canActivate: [authenticatedService] }
+  // { path: 'header', component: HeaderComponent },
+  // { path: 'footer', component: FooterComponent },
+  // { path: 'about', component: AboutComponent },
+  // { path: 'contact', component: ContactComponent },
+  // { path: 'services', component: ServicesComponent },
+  // { path: 'portfolio', component: PortfolioComponent },
+  // { path: 'pricing', component: PricingComponent },
+  // { path: 'home', component: HomeComponent},
+  // { path: 'login', component: Login},
+  // { path: 'personsetting', component: personsettingComponent,canActivate: [authenticatedService] }
   
 ];
 
