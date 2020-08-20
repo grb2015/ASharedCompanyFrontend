@@ -1,24 +1,26 @@
-<div id="tableToBack" class="main-content" style="color: #ffffff;">
-  <div style="width: 100%;position: absolute;top: 5vh;bottom: 0;overflow-x: hidden;" class="z-border1 my-scrollBar">
-    <table class="table-bordered table">
-      <thead>
-      <tr style="height: 44px;">
-        <th nowrap="nowrap" width="10%">省</th>
-        <th nowrap="nowrap" width="10%">市</th>
-        <th nowrap="nowrap" width="10%">县</th>
-        <th nowrap="nowrap" width="10%">公司简称</th>
-        <th nowrap="nowrap" width="10%">公司全名</th>
-        <th nowrap="nowrap" width="10%">行业</th>
-        <th nowrap="nowrap" width="10%">营业额</th>
-        <th nowrap="nowrap" width="10%">利润</th>
-        <th nowrap="nowrap" width="10%">利润率</th>
-        <th nowrap="nowrap" width="10%">注册地</th>
-        <th nowrap="nowrap" width="10%">办公地</th>
-        <th nowrap="nowrap" width="10%">官网</th>
-        <th nowrap="nowrap" width="10%">上市日期</th>
-      </thead>
-      <tbody >
-      <tr *ngFor="let listInfo of listInfos;" >
+<!--  ref : https://getbootstrap.com/docs/4.0/content/tables/ -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">序号</th>
+      <th scope="col">省</th>
+      <th scope="col">市</th>
+      <th scope="col">县</th>
+      <th scope="col">公司简称</th>
+      <th scope="col">公司全名</th>
+      <th scope="col">行业</th>
+      <th scope="col">营业额</th>
+      <th scope="col">利润</th>
+      <th scope="col">利润率</th>
+      <th scope="col">注册地</th>
+      <th scope="col">办公地</th>
+      <th scope="col">官网</th>
+      <th scope="col">上市日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let listInfo of listInfos;let i= index" >
+        <th scope="row">{{i+1}}</th>
         <td>{{listInfo.province}}</td>
         <td>{{listInfo.city}}</td>
         <td>{{listInfo.region}}</td>
@@ -33,8 +35,6 @@
         <td>{{listInfo.guanwan}}</td>
         <td>{{listInfo.shangshiriqi}}</td>
       </tr>
-      </tbody>
-    </table>
-  </div>
+  </tbody>
+</table>
 
-</div>
