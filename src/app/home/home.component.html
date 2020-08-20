@@ -18,21 +18,20 @@
         <th nowrap="nowrap" width="10%">上市日期</th>
       </thead>
       <tbody >
-      <tr *ngFor="let listInfo of listInfos;let i= index" style="">
-        <td>{{i}}</td>
-        <td>{{listInfo.1}}</td>
-        <td>{{listInfo.2}}</td>
-        <td>{{listInfo.3}}</td>
-        <td>{{listInfo.4}}</td>
-        <td>{{listInfo.5}}</td>
-        <td>{{listInfo.6}}</td>
-        <td>{{listInfo.7}}</td>
-        <td>{{listInfo.8}}</td>
-        <td>{{listInfo.9}}</td>
-        <td>{{listInfo.10}}</td>
-        <td>{{listInfo.11}}</td>
-        <td>{{listInfo.12}}</td>
-        <td>{{listInfo.13}}</td>
+      <tr *ngFor="let listInfo of listInfos;" >
+        <td>{{listInfo.province}}</td>
+        <td>{{listInfo.city}}</td>
+        <td>{{listInfo.region}}</td>
+        <td>{{listInfo.jianchen}}</td>
+        <td>{{listInfo.quanmin}}</td>
+        <td>{{listInfo.hangye}}</td>
+        <td>{{listInfo.yiyee}}</td>
+        <td>{{listInfo.lirun}}</td>
+        <td>{{listInfo.lirunlv}}</td>
+        <td>{{listInfo.zhucedi}}</td>
+        <td>{{listInfo.bangongdi}}</td>
+        <td>{{listInfo.guanwan}}</td>
+        <td>{{listInfo.shangshiriqi}}</td>
       </tr>
       </tbody>
     </table>

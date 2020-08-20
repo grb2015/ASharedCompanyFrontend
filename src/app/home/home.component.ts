@@ -23,12 +23,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.listInfos=[
-      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
-      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
-      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
-      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
-      {'1':1,'2':2,'3':3,'4':4,'5':5,'6':1,'7':2,'8':3,'9':4,'10':5,'11':1,'12':2,'13':3},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
+      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
     ]
+    
   }
 
 
