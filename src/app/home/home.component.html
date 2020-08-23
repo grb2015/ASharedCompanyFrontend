@@ -4,6 +4,7 @@
     <option value="{{item.id}}" *ngFor="let item of copSelect">{{item.name}}</option>
   </select>
   <button   (click)="queryData()" class="z-button2">查询</button>
+  <span>共{{listInfos.length}}条记录</span>
 </div>
 
 <table class="table table-hover">
