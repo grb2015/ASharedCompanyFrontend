@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
+import {httpservice } from "../shareService/httpsevice";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   emailForm: FormGroup;
   private listInfos;
-  constructor(private formbuilder: FormBuilder,private title: Title)
+  constructor(private formbuilder: FormBuilder,private title: Title,private backendApi: httpservice)
   {
     title.setTitle('Home');
     this.emailForm = this.formbuilder.group(
@@ -22,18 +23,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listInfos=[
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-      {'province':1,'city':2,'region':3,'jianchen':4,'quanmin':5,'hangye':1,"yiyee":1,"lirun":1,"lirunlv":1,"zhucedi":1,"bangongdi":1,"guanwan":1,"shangshiriqi":1},
-    ]
-    
+    this.backendApi.get_data_from_json("./assets/json/all_province_commanpy_info_all_country_formated_addr.json").subscribe(
+      (data) => {
+        console.log("data  = ")
+        console.log(data)
+        this.listInfos = data.json();
+        console.log("this.listInfos = ")
+        console.log(this.listInfos)
+      }
+    );
   }
-
 
 
 }
