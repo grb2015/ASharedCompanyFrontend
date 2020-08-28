@@ -11,7 +11,7 @@ import {httpservice } from "../shareService/httpsevice";
 export class HomeComponent implements OnInit {
 
   emailForm: FormGroup;
-  private listInfos;              // 总的数据
+  private listInfos= [];              // 总的数据
   private listInfoSelected = []   // 筛选后的数据
   private ConstlistInfoAll= []   // 筛选后的数据
   private copSelect = [
@@ -173,11 +173,14 @@ export class HomeComponent implements OnInit {
   }
 
   queryData() {
-      let select = document.getElementById('provinceSelect');
+    // @ts-ignore
+      let select = (document.getElementById("provinceSelect")) as HTMLSelectElement;
+      console.log("select =")
+      console.log(select)
       // @ts-ignore
-      let index = select.selectedIndex;
+      let index = (<HTMLSelectElement>document.getElementById('provinceSelect')).selectedIndex;
       // @ts-ignore
-      let value = select.options[index].value;
+      let value = (<HTMLSelectElement>document.getElementById('provinceSelect')).value;
       console.log("### this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
       console.log("### index = ",index)
       console.log("### value = ",value)
@@ -196,6 +199,5 @@ export class HomeComponent implements OnInit {
       this.listInfos = this.listInfoSelected
 
   }
-
 
 }
