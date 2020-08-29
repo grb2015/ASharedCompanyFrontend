@@ -44,10 +44,6 @@ export class HomeComponent implements OnInit {
       id: '广东省'
     },
     {
-      name: '广东省',
-      id: '广东省'
-    },
-    {
       name: '广西壮族自治区',
       id: '广西壮族自治区'
     },

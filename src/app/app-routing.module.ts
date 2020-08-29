@@ -1,8 +1,8 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // import {AboutComponent} from "./about/about.component";
-// import {HeaderComponent} from "./header/header.component";
-// import {FooterComponent} from "./footer/footer.component";
+import {HeaderComponent} from "./header/header.component";
+import {FooterComponent} from "./footer/footer.component";
 // import {ContactComponent} from "./contact/contact.component";
 // import {ServicesComponent} from "./services/services.component";
 // import {PortfolioComponent} from "./portfolio/portfolio.component";
@@ -15,8 +15,8 @@ import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  // { path: 'header', component: HeaderComponent },
-  // { path: 'footer', component: FooterComponent },
+  { path: 'header', component: HeaderComponent },
+  { path: 'footer', component: FooterComponent },
   // { path: 'about', component: AboutComponent },
   // { path: 'contact', component: ContactComponent },
   // { path: 'services', component: ServicesComponent },

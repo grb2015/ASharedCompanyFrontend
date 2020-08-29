@@ -1,48 +1,56 @@
 <!--  ref : https://getbootstrap.com/docs/4.0/content/tables/ -->
-<div>
-  <select  id="provinceSelect">
-    <option value="{{item.id}}" *ngFor="let item of copSelect">{{item.name}}</option>
-  </select>
-  <button   (click)="queryData()" class="z-button2">查询</button>
-  <span>共{{listInfos.length}}条记录</span>
-</div>
+<div style="padding-top: 5vh;">
+    <div style="text-align: right;padding-right: 2vw;">
+        <p style="font-weight: bold;">联系作者:</p>
+        <img  style="width: 20%;;" src="./assets/images/erWeiMa_Search.png">
+  </div>
+    
+  <div>
+    <select  id="provinceSelect">
+      <option value="{{item.id}}" *ngFor="let item of copSelect">{{item.name}}</option>
+    </select>
+    <button   (click)="queryData()" class="z-button2">查询</button>
+    <span>共{{listInfos.length}}条记录</span>
+  </div>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">序号</th>
-      <th scope="col">省</th>
-      <th scope="col">市</th>
-      <th scope="col">县</th>
-      <th scope="col">公司简称</th>
-      <th scope="col">公司全名</th>
-      <th scope="col">行业</th>
-      <th scope="col">营业额(万)</th>
-      <th scope="col">利润(万)</th>
-      <th scope="col">股票代码</th>
-      <th scope="col">注册地</th>
-      <th scope="col">办公地</th>
-      <th scope="col">官网</th>
-      <th scope="col">上市日期</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let listInfo of listInfos;let i= index" >
-        <th scope="row">{{i+1}}</th>
-        <td>{{listInfo.province}}</td>
-        <td>{{listInfo.city}}</td>
-        <td>{{listInfo.conunty}}</td>
-        <td>{{listInfo.jianchen}}</td>
-        <td>{{listInfo.quanmin}}</td>
-        <td>{{listInfo.hangye}}</td>
-        <td>{{listInfo.yiyee}}</td>
-        <td>{{listInfo.lirun}}</td>
-        <td>{{listInfo.guPiaoDaiMa}}</td>
-        <td>{{listInfo.zhucedi}}</td>
-        <td>{{listInfo.bangongdi}}</td>
-        <td><a target="_blank" rel="noopener noreferrer" href="http://{{listInfo.guanwan}}">{{listInfo.guanwan}}</a></td>
-        <td>{{listInfo.shangshiriqi}}</td>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">序号</th>
+        <th scope="col">省</th>
+        <th scope="col">市</th>
+        <th scope="col">县</th>
+        <th scope="col">公司简称</th>
+        <th scope="col">公司全名</th>
+        <th scope="col">行业</th>
+        <th scope="col">营业额(万)</th>
+        <th scope="col">利润(万)</th>
+        <th scope="col">股票代码</th>
+        <th scope="col">注册地</th>
+        <th scope="col">办公地</th>
+        <th scope="col">官网</th>
+        <th scope="col">上市日期</th>
       </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listInfo of listInfos;let i= index" >
+          <th scope="row">{{i+1}}</th>
+          <td>{{listInfo.province}}</td>
+          <td>{{listInfo.city}}</td>
+          <td>{{listInfo.conunty}}</td>
+          <td>{{listInfo.jianchen}}</td>
+          <td>{{listInfo.quanmin}}</td>
+          <td>{{listInfo.hangye}}</td>
+          <td>{{listInfo.yiyee}}</td>
+          <td>{{listInfo.lirun}}</td>
+          <td>{{listInfo.guPiaoDaiMa}}</td>
+          <td>{{listInfo.zhucedi}}</td>
+          <td>{{listInfo.bangongdi}}</td>
+          <td><a target="_blank" rel="noopener noreferrer" href="http://{{listInfo.guanwan}}">{{listInfo.guanwan}}</a></td>
+          <td>{{listInfo.shangshiriqi}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+</div>
 

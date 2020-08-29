@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 // import { AboutComponent } from './about/about.component';
-// import { HeaderComponent } from './header/header.component';
-// import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 // import { ContactComponent } from './contact/contact.component';
 // import { ServicesComponent } from './services/services.component';
 // import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -27,8 +27,8 @@ import {authenticatedService} from "./shareService/authenticatedService";
   declarations: [
     AppComponent,
     // AboutComponent,
-    // HeaderComponent,
-    // FooterComponent,
+    HeaderComponent,
+    FooterComponent,
     // ContactComponent,
     // ServicesComponent,
     // PortfolioComponent,
