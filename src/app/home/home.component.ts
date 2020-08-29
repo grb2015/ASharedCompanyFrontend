@@ -162,12 +162,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.backendApi.get_data_from_json("./assets/json/all_province_commanpy_info_all_country_formated_addr.json").subscribe(
       (data) => {
-        console.log("data  = ")
-        console.log(data)
+        // console.log("data  = ")
+        // console.log(data)
         this.listInfos = data.json();
         this.ConstlistInfoAll  = data.json();
-        console.log("this.listInfos = ")
-        console.log(this.listInfos)
+        // console.log("this.listInfos = ")
+        // console.log(this.listInfos)
       }
     );
   }
@@ -175,15 +175,15 @@ export class HomeComponent implements OnInit {
   queryData() {
     // @ts-ignore
       let select = (document.getElementById("provinceSelect")) as HTMLSelectElement;
-      console.log("select =")
-      console.log(select)
+      // console.log("select =")
+      // console.log(select)
       // @ts-ignore
       let index = (<HTMLSelectElement>document.getElementById('provinceSelect')).selectedIndex;
       // @ts-ignore
       let value = (<HTMLSelectElement>document.getElementById('provinceSelect')).value;
-      console.log("### this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
-      console.log("### index = ",index)
-      console.log("### value = ",value)
+      // console.log("### this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
+      // console.log("### index = ",index)
+      // console.log("### value = ",value)
       if (value === '全部省份'){
         this.listInfos = this.ConstlistInfoAll;
         return ;
@@ -194,8 +194,8 @@ export class HomeComponent implements OnInit {
           this.listInfoSelected.push(this.ConstlistInfoAll[i])
         }
       }
-      console.log("this.listInfoSelected = ")
-      console.log(this.listInfoSelected)      
+      // console.log("this.listInfoSelected = ")
+      // console.log(this.listInfoSelected)      
       this.listInfos = this.listInfoSelected
 
   }
