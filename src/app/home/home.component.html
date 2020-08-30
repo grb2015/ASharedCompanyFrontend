@@ -6,10 +6,13 @@
   </div>
     
   <div>
-    <select  id="provinceSelect">
-      <option value="{{item.id}}" *ngFor="let item of copSelect">{{item.name}}</option>
+    <select  id="provinceSelect" (change)="queryData()">
+      <option value="{{province.id}}" *ngFor="let province of provinces">{{province.name}}</option>
     </select>
-    <button   (click)="queryData()" class="z-button2">查询</button>
+    <select  id="citySelect" (change)="cityChange()">
+      <option value="{{city.id}}" *ngFor="let city of cities">{{city.name}}</option>
+    </select>
+    <!-- <button   (click)="queryData()" class="z-button2">查询</button> -->
     <span>共{{listInfos.length}}条记录</span>
   </div>
 

@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   private listInfos= [];              // 总的数据
   private listInfoSelected = []   // 筛选后的数据
   private ConstlistInfoAll= []   // 筛选后的数据
-  private copSelect = [
+  private provinces = [
     {
       name: '全部省份',
       id: '全部省份'
@@ -145,6 +145,12 @@ export class HomeComponent implements OnInit {
       id: '浙江省'
     }
   ]
+  private cities = [
+    {
+      name: '全部城市',
+      id: '全部城市'
+    },
+  ];
   constructor(private formbuilder: FormBuilder,private title: Title,private backendApi: httpservice)
   {
     title.setTitle('Home');
@@ -194,6 +200,55 @@ export class HomeComponent implements OnInit {
       // console.log(this.listInfoSelected)      
       this.listInfos = this.listInfoSelected
 
+      /* 得到该省下面的所有地级市，作为第二个下拉框的数据
+         遍历所有数据
+       */
+      
+      let tmpList = [];
+      this.cities = [
+        {
+          name: '全部城市',
+          id: '全部城市'
+        },
+      ];
+      for(let i = 0;i<this.ConstlistInfoAll.length;i++){
+        if(this.ConstlistInfoAll[i]['province'] === value && tmpList.indexOf(this.ConstlistInfoAll[i]['city']) === -1 ){
+          tmpList.push(this.ConstlistInfoAll[i]['city'])
+        }
+      }
+      console.log(tmpList)
+      for(let i = 0;i< tmpList.length;i++){
+        this.cities.push( {'name':tmpList[i],'id':tmpList[i]})
+      }
+      console.log(this.cities)
+    }
+
+
+
+  cityChange(){
+    // @ts-ignore
+    let select = (document.getElementById("citySelect")) as HTMLSelectElement;
+    // console.log("select =")
+    // console.log(select)
+    // @ts-ignore
+    let index = (<HTMLSelectElement>document.getElementById('citySelect')).selectedIndex;
+    // @ts-ignore
+    let value = (<HTMLSelectElement>document.getElementById('citySelect')).value;
+    console.log("### [cityChange] this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
+    console.log("### [cityChange] index = ",index)
+    console.log("### [cityChange] value = ",value)
+    if (value === '全部城市'){
+      return ;
+    }
+    this.listInfoSelected = [];
+    for(let i = 0;i<this.ConstlistInfoAll.length;i++){
+      if(this.ConstlistInfoAll[i]['city'] === value){
+        this.listInfoSelected.push(this.ConstlistInfoAll[i])
+      }
+    }
+    // console.log("this.listInfoSelected = ")
+    // console.log(this.listInfoSelected)      
+    this.listInfos = this.listInfoSelected
   }
 
 }
