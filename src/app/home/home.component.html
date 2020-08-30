@@ -12,6 +12,9 @@
     <select  id="citySelect" (change)="cityChange()">
       <option value="{{city.id}}" *ngFor="let city of cities">{{city.name}}</option>
     </select>
+    <select  id="conuntySelect" (change)="conuntyChange()">
+      <option value="{{conunty.id}}" *ngFor="let conunty of conunties">{{conunty.name}}</option>
+    </select>
     <!-- <button   (click)="queryData()" class="z-button2">查询</button> -->
     <span>共{{listInfos.length}}条记录</span>
   </div>

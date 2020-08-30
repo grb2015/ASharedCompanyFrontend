@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
   private listInfos= [];              // 总的数据
   private listInfoSelected = []   // 筛选后的数据
   private ConstlistInfoAll= []   // 筛选后的数据
+  private curProvince ;   // 保存当前选中的省份
+  private curCity ;       // 保存当前选中的城市
+  private curconunty ;       // 保存当前选中的区县
+
   private provinces = [
     {
       name: '全部省份',
@@ -151,6 +155,13 @@ export class HomeComponent implements OnInit {
       id: '全部城市'
     },
   ];
+
+  private conunties = [
+    {
+      name: '全部区县',
+      id: '全部区县'
+    },
+  ];
   constructor(private formbuilder: FormBuilder,private title: Title,private backendApi: httpservice)
   {
     title.setTitle('Home');
@@ -183,6 +194,7 @@ export class HomeComponent implements OnInit {
       let index = (<HTMLSelectElement>document.getElementById('provinceSelect')).selectedIndex;
       // @ts-ignore
       let value = (<HTMLSelectElement>document.getElementById('provinceSelect')).value;
+      this.curProvince = value;
       // console.log("### this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
       // console.log("### index = ",index)
       // console.log("### value = ",value)
@@ -203,7 +215,6 @@ export class HomeComponent implements OnInit {
       /* 得到该省下面的所有地级市，作为第二个下拉框的数据
          遍历所有数据
        */
-      
       let tmpList = [];
       this.cities = [
         {
@@ -234,6 +245,7 @@ export class HomeComponent implements OnInit {
     let index = (<HTMLSelectElement>document.getElementById('citySelect')).selectedIndex;
     // @ts-ignore
     let value = (<HTMLSelectElement>document.getElementById('citySelect')).value;
+    this.curCity = value;
     console.log("### [cityChange] this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
     console.log("### [cityChange] index = ",index)
     console.log("### [cityChange] value = ",value)
@@ -249,6 +261,60 @@ export class HomeComponent implements OnInit {
     // console.log("this.listInfoSelected = ")
     // console.log(this.listInfoSelected)      
     this.listInfos = this.listInfoSelected
+
+    // 选中地级市后，构造区县的下拉框数据
+      let tmpList = [];
+      this.conunties = [
+        {
+          name: '全部城市',
+          id: '全部城市'
+        },
+      ];
+      console.log("curProvince= ",this.curProvince)
+      console.log("curCity= ",this.curCity)
+      for(let i = 0;i<this.ConstlistInfoAll.length;i++){
+        // console.log("this.ConstlistInfoAll[i]['conunty'] =",this.ConstlistInfoAll[i]['conunty'])
+        if(this.ConstlistInfoAll[i]['province'] === this.curProvince && this.ConstlistInfoAll[i]['city'] === this.curCity  && tmpList.indexOf(this.ConstlistInfoAll[i]['conunty']) === -1 ){
+          tmpList.push(this.ConstlistInfoAll[i]['conunty'])
+        }
+      }
+      console.log(tmpList)
+      for(let i = 0;i< tmpList.length;i++){
+        this.conunties.push( {'name':tmpList[i],'id':tmpList[i]})
+      }
+      console.log(this.conunties)
+    }
+
+
+
+
+  conuntyChange(){
+
+        // @ts-ignore
+        let select = (document.getElementById("conuntySelect")) as HTMLSelectElement;
+        // console.log("select =")
+        // console.log(select)
+        // @ts-ignore
+        let index = (<HTMLSelectElement>document.getElementById('conuntySelect')).selectedIndex;
+        // @ts-ignore
+        let value = (<HTMLSelectElement>document.getElementById('conuntySelect')).value;
+        this.curconunty = value;
+        console.log("### [conuntyChange] this.ConstlistInfoAll.length = ",this.ConstlistInfoAll.length)
+        console.log("### [conuntyChange] index = ",index)
+        console.log("### [conuntyChange] value = ",value)
+        console.log("### [conuntyChange] this.curProvince = ",this.curProvince)
+        console.log("### [conuntyChange] this.curCity = ",this.curCity)
+        if (value === '全部区县'){
+          return ;
+        }
+        this.listInfoSelected = [];
+        for(let i = 0;i<this.ConstlistInfoAll.length;i++){
+          if(this.ConstlistInfoAll[i]['province'] === this.curProvince && this.ConstlistInfoAll[i]['city'] === this.curCity && this.ConstlistInfoAll[i]['conunty'] === value){
+            this.listInfoSelected.push(this.ConstlistInfoAll[i])
+          }
+        }
+        this.listInfos = this.listInfoSelected
+
   }
 
 }
