@@ -7,6 +7,10 @@
 
 解决方法： 我们发现的问题有3个：  
 1. http接口请求的json有3M多，在服务器IIS上进行gzip压缩(浏览器默认就是请求gzip格式，所有http 接口中不需要加gzip头）,这样压缩之后，3M变为500k左右。  
+  参考：  
+  https://stackoverflow.com/questions/25580078/how-to-enable-gzip-compression-in-iis-7-5  
+  https://blog.csdn.net/dream_ll/article/details/52996540  
+  https://blog.csdn.net/qq_26708777/article/details/79210936  
 2. * npm run build 之后，dist里面的vendor.bundle.js有3M左右，这个即使IIS设置了gzip它也不会被压缩。这个文件请求仍然很慢。 
    * 即使使用官方的最简单的Hero应用，https://angular.cn/tutorial/toh-pt0  dist后仍然有3M，  
   **(这里可以继续优化)**   
