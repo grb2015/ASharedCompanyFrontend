@@ -32,6 +32,8 @@
 ## 4.如何使用百度统计来看自己的网站被访问的数据
     step1 : 首先在百度统计里面新建网站  https://tongji.baidu.com/sc-web/10000247012/home/site/index?from=3
     step2 ：将百度的js文件加入到代码中。https://tongji.baidu.com/web/help/article?id=175&type=0 
+    如下图：
+    ![](https://github.com/grb2015/ASharedCompanyFrontend/blob/master/docs/baiduTongJi.png)
     
     note:可参考提交
     和 20200831的这次提交 [add] 加入百度统计的js文件
