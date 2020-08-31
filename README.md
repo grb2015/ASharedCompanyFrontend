@@ -13,7 +13,10 @@
   https://blog.csdn.net/qq_26708777/article/details/79210936  
 2. * npm run build 之后，dist里面的vendor.bundle.js有3M左右，这个即使IIS设置了gzip它也不会被压缩。这个文件请求仍然很慢。 
    * 即使使用官方的最简单的Hero应用，https://angular.cn/tutorial/toh-pt0  dist后仍然有3M，  
-  **(这里可以继续优化)**   
+    **解决方法**:  
+    不要使用npm run build --prod 进行编译。  
+    使用 ng build --prod 或者 ng build --prod --build-optimizer  
+     ref: https://stackoverflow.com/questions/41432673/how-to-decrease-prod-bundle-size  
 3. 服务器AWS配置太低,1核cpu 1G内存，网络是中低速，而且服务器在新加坡。特别是网络宽带太低，提高配置之后，即使3M的vendor.bundle.js也是秒开。  
 
 ## 2. 使用阿里云的服务器，然后用域名访问的时候，需要进行备案。
