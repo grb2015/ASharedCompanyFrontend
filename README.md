@@ -30,9 +30,11 @@
      用户中心-->站点管理 ，这个就是站长工具，可以看是否被百度的爬虫抓取过关键字
      
 ## 4.如何使用百度统计来看自己的网站被访问的数据
-
-    ref  : https://tongji.baidu.com/web/help/article?id=175&type=0 
-    和 20200831的这次提交 [add] 加入百度统计的js文件、
+    step1 : 首先在百度统计里面新建网站  https://tongji.baidu.com/sc-web/10000247012/home/site/index?from=3
+    step2 ：将百度的js文件加入到代码中。https://tongji.baidu.com/web/help/article?id=175&type=0 
+    
+    note:可参考提交
+    和 20200831的这次提交 [add] 加入百度统计的js文件
 
 
 
