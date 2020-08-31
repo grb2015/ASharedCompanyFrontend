@@ -22,4 +22,19 @@
   ![aliyun_dns](https://github.com/grb2015/ASharedCompanyFrontend/blob/master/docs/aliyun_dns.png)
   * 进行备案 ，不过貌似需要使用阿里云服务器3个月以上，才能在阿里云进行备份
   
+## 3. 如何让百度能够搜索到自己的网站? 
 
+参考：https://jingyan.baidu.com/article/363872ec21d5346e4ba16fb1.html
+     用户中心-->站点管理(https://ziyuan.baidu.com/site/index#/) 。需要添加网站验证才能管理。而站点管理需要先验证网站。注意需要手动将baidu_verify_HVQt2JtSbM.html加入到dist/目录
+     
+     用户中心-->站点管理 ，这个就是站长工具，可以看是否被百度的爬虫抓取过关键字
+     
+## 4.如何使用百度统计来看自己的网站被访问的数据
+
+    ref  : https://tongji.baidu.com/web/help/article?id=175&type=0 
+    和 20200831的这次提交 [add] 加入百度统计的js文件、
+
+
+
+ 
+ 
