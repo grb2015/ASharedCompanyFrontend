@@ -11,14 +11,14 @@ import {httpservice } from "../shareService/httpsevice";
 export class HomeComponent implements OnInit {
 
   emailForm: FormGroup;
-  private listInfos= [];              // 总的数据
-  private listInfoSelected = []   // 筛选后的数据
-  private ConstlistInfoAll= []   // 筛选后的数据
-  private curProvince ;   // 保存当前选中的省份
-  private curCity ;       // 保存当前选中的城市
-  private curconunty ;       // 保存当前选中的区县
+  public listInfos= [];              // 总的数据
+  public listInfoSelected = []   // 筛选后的数据
+  public ConstlistInfoAll= []   // 筛选后的数据
+  public curProvince ;   // 保存当前选中的省份
+  public curCity ;       // 保存当前选中的城市
+  public curconunty ;       // 保存当前选中的区县
 
-  private provinces = [
+  public provinces = [
     {
       name: '全部省份',
       id: '全部省份'
@@ -149,20 +149,20 @@ export class HomeComponent implements OnInit {
       id: '浙江省'
     }
   ]
-  private cities = [
+  public cities = [
     {
       name: '全部城市',
       id: '全部城市'
     },
   ];
 
-  private conunties = [
+  public conunties = [
     {
       name: '全部区县',
       id: '全部区县'
     },
   ];
-  constructor(private formbuilder: FormBuilder,private title: Title,private backendApi: httpservice)
+  constructor(public formbuilder: FormBuilder,public title: Title,public backendApi: httpservice)
   {
     title.setTitle('上市公司完整名单');
     this.emailForm = this.formbuilder.group(
