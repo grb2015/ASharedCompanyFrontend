@@ -164,7 +164,7 @@ export class HomeComponent implements OnInit {
   ];
   constructor(public formbuilder: FormBuilder,public title: Title,public backendApi: httpservice)
   {
-    title.setTitle('上市公司完整名单');
+    title.setTitle('上市公司内推');
     this.emailForm = this.formbuilder.group(
       {
         'email' : ['', Validators.required]
