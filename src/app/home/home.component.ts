@@ -179,8 +179,8 @@ export class HomeComponent implements OnInit {
         // console.log(data)
         this.listInfos = data.json();
         this.ConstlistInfoAll  = data.json();
-        // console.log("this.listInfos = ")
-        // console.log(this.listInfos)
+        console.log("this.listInfos = ")
+        console.log(this.listInfos)
       }
     );
   }
